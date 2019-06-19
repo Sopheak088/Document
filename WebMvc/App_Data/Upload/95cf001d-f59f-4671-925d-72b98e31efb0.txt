@@ -1,0 +1,18 @@
+Windows Server 2012 Standard r2 Key                   XC9B7-NBPP2-83J2H-RHMBY-92BT4
+Windows Server 2012 r2 Standard                           D2N9P-3P6X9-2R39C-7RTCD-MDVJX
+Windows Server 2012 Standard                               XC9B7-NBPP2-83J2H-RHMBY-92BT4
+Windows Server 2012 Server Standard                   XC9B7-NBPP2-83J2H-RHMBY-92BT4
+Windows Server 2012 Standard Core                      XC9B7-NBPP2-83J2H-RHMBY-92BT4
+Windows Server 2012 Core                                     BN3D2-R7TKB-3YPBD-8DRP2-27GG4
+Windows Server 2012 Core N                                 8N2M2-HWPGY-7PGT9-HGDD8-GVGGY
+Windows Server Standard 2012 r2 Key                  DBGBW-NPF86-BJVTX-K3WKJ-MTB6V
+Windows Server 2012 R2 r2 Essentials                  KNC87-3J2TX-XB4WP-VCPJV-M4FWM
+Windows Server Essentials 2012 r2 Key                K2XGM-NMBT3-2R6Q8-WF2FK-P36R2
+Windows Server Datacenter 2012 r2 Key              Y4TGP-NPTV9-HTC2H-7MGQ3-DV4TW
+Windows Server 2012 R2 r2 Datacenter                W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9
+Windows Server 2012 Datacenter                          48HP8-DN98B-MYWDG-T2DCC-8W83P
+Windows Server 2012 Datacenter Core                 48HP8-DN98B-MYWDG-T2DCC-8W83P
+Windows Server 2012 Core Single Language       2WN2H-YGCQR-KFX6K-CD6TF-84YXQ
+Windows Server 2012 Core Country Specific       4K36P-JN4VD-GDC6V-KDT89-DYFKP
+Windows Server 2012 MultiPoint Standard           HM7DN-YVMH3-46JC3-XYTG7-CYQJJ
+Windows Server 2012 MultiPoint Premium          XNH6W-2V9GX-RGJ4K-Y8X6F-QGJ2G

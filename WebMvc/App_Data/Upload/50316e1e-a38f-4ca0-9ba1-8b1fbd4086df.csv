@@ -1,0 +1,4 @@
+"Id","Email","EmailConfirmed","PasswordHash","SecurityStamp","PhoneNumber","PhoneNumberConfirmed","TwoFactorEnabled","LockoutEndDateUtc","LockoutEnabled","AccessFailedCount","UserName"
+"1ff1bbec-f8f2-422b-855a-a3fc393c4afd","view@gmail.com","0","AKZYzQuUusdsNyzwrzXcpns51h8ZSWWzPDrYAuGQ6AdM3uHISZoQCg3Y6K3vtoGuFA==","ccc1b6cc-244c-4da5-9f6c-3dd81c09e2d8","","0","0","","1","0","view@gmail.com"
+"4d04e995-df49-4445-88cd-f1240e9fd406","huynhquy9x@gmail.com","1","AG95belAzs5RuxO1VZkqnU73IzenxtyXc48qx92SBr3+N+6HAR2CFhXjmYxCXjQqDA==","fb2cb3b6-1950-4c8b-8d88-10155706ee00","0976656454","1","0","","0","0","admin"
+"84a089e8-f732-4e93-a9b5-b95d952bf676","huynhquy9x@gmail.com","1","AJDjzgN2ZvhF4+hLIGskgNwJaY/pSjQTW3SfXg3dWKTUts/HCs0/b0AQNqf+bY9lfw==","1f88db3a-6490-443a-b0a1-571d13ae2bed","0976656454","1","0","","0","0","huynhquy9x@gmail.com"

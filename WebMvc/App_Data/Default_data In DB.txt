@@ -1,0 +1,36 @@
+
+DELETE FROM ApplicationGroups
+GO
+INSERT INTO ApplicationGroups VALUES
+    (N'1af06ddb-018f-49ee-b441-2e1a8787061c',N'User',N'Test'),
+    (N'6e26f8f9-e4a9-4045-8c42-e4ebb63b2e6e',N'Admin Group',N'Admin'),
+    (N'7c188330-1da9-47d8-82bd-7303b9712448',N'SuperAdmins',N'Full Access to All'),
+    (N'9965d22b-9885-4c89-8dcd-021ce0310218',N'Viewer Group',N'only view');
+
+
+GO 
+DELETE FROM AspNetRoles
+GO
+INSERT INTO AspNetRoles VALUES
+    (N'bd4fbf5c-e6f5-427b-a75a-ceea3e6438ab',N'Admin'),
+    (N'1b8f03f3-5dd0-494b-a9da-6bd3f8c96fdb',N'Editor'),
+    (N'20dc483d-2bc1-4c29-82e1-5be8ac5f5b4b',N'Viewer');
+GO
+DELETE FROM AspNetUsers
+GO
+INSERT INTO AspNetUsers VALUES
+    ('1ff1bbec-f8f2-422b-855a-a3fc393c4afd','view@gmail.com',0,'AKZYzQuUusdsNyzwrzXcpns51h8ZSWWzPDrYAuGQ6AdM3uHISZoQCg3Y6K3vtoGuFA==','ccc1b6cc-244c-4da5-9f6c-3dd81c09e2d8',NULL,0,0,NULL,1,0,'view@gmail.com'),
+    ('4d04e995-df49-4445-88cd-f1240e9fd406','huynhquy9x@gmail.com',1,'AG95belAzs5RuxO1VZkqnU73IzenxtyXc48qx92SBr3+N+6HAR2CFhXjmYxCXjQqDA==','fb2cb3b6-1950-4c8b-8d88-10155706ee00',0976656454,1,0,NULL,0,0,'admin'),
+    ('84a089e8-f732-4e93-a9b5-b95d952bf676','huynhquy9x@gmail.com',1,'AJDjzgN2ZvhF4+hLIGskgNwJaY/pSjQTW3SfXg3dWKTUts/HCs0/b0AQNqf+bY9lfw==','1f88db3a-6490-443a-b0a1-571d13ae2bed',0976656454,1,0,NULL,0,0,'huynhquy9x@gmail.com');
+GO
+DELETE FROM AspNetUserRoles
+GO
+INSERT INTO AspNetUserRoles VALUES
+    (N'4d04e995-df49-4445-88cd-f1240e9fd406',N'bd4fbf5c-e6f5-427b-a75a-ceea3e6438ab');
+
+GO
+DELETE FROM ApplicationUserGroups
+GO
+INSERT INTO ApplicationUserGroups VALUES
+    (N'84a089e8-f732-4e93-a9b5-b95d952bf676',N'6e26f8f9-e4a9-4045-8c42-e4ebb63b2e6e'),
+    (N'1ff1bbec-f8f2-422b-855a-a3fc393c4afd',N'9965d22b-9885-4c89-8dcd-021ce0310218');

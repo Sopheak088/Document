@@ -1,0 +1,349 @@
+************************************************Overide**************************************************************
+abstract class ShapesClass
+{
+    abstract public int Area();
+}
+class Square : ShapesClass
+{
+    int side = 0;
+
+    public Square(int n)
+    {
+        side = n;
+    }
+    // Area method is required to avoid
+    // a compile-time error.
+    public override int Area()
+    {
+        return side * side;
+    }
+
+    static void Main() 
+    {
+        Square sq = new Square(12);
+        Console.WriteLine("Area of the square = {0}", sq.Area());
+    }
+
+    interface I
+    {
+        void M();
+    }
+    abstract class C : I
+    {
+        public abstract void M();
+    }
+
+}
+// Output: Area of the square = 144
+***********************************************Overide***************************************************************
+class TestOverride
+{
+    public class Employee
+    {
+        public string name;
+
+        // Basepay is defined as protected, so that it may be 
+        // accessed only by this class and derived classes.
+        protected decimal basepay;
+
+        // Constructor to set the name and basepay values.
+        public Employee(string name, decimal basepay)
+        {
+            this.name = name;
+            this.basepay = basepay;
+        }
+
+        // Declared virtual so it can be overridden.
+        public virtual decimal CalculatePay()
+        {
+            return basepay;
+        }
+    }
+
+    // Derive a new class from Employee.
+    public class SalesEmployee : Employee
+    {
+        // New field that will affect the base pay.
+        private decimal salesbonus;
+
+        // The constructor calls the base-class version, and
+        // initializes the salesbonus field.
+        public SalesEmployee(string name, decimal basepay, 
+                  decimal salesbonus) : base(name, basepay)
+        {
+            this.salesbonus = salesbonus;
+        }
+
+        // Override the CalculatePay method 
+        // to take bonus into account.
+        public override decimal CalculatePay()
+        {
+            return basepay + salesbonus;
+        }
+    }
+
+    static void Main()
+    {
+        // Create some new employees.
+        SalesEmployee employee1 = new SalesEmployee("Alice", 
+                      1000, 500);
+        Employee employee2 = new Employee("Bob", 1200);
+
+        Console.WriteLine("Employee4 " + employee1.name + 
+                  " earned: " + employee1.CalculatePay());
+        Console.WriteLine("Employee4 " + employee2.name + 
+                  " earned: " + employee2.CalculatePay());
+    }
+}
+/*
+    Output:
+    Employee4 Alice earned: 1500
+    Employee4 Bob earned: 1200
+*/
+**************************************************Polymorphism********************************************************************
+using System;
+using System.Collections.Generic;
+
+public class Shape
+{
+    // A few example members
+    public int X { get; private set; }
+    public int Y { get; private set; }
+    public int Height { get; set; }
+    public int Width { get; set; }
+   
+    // Virtual method
+    public virtual void Draw()
+    {
+        Console.WriteLine("Performing base class drawing tasks");
+    }
+}
+
+class Circle : Shape
+{
+    public override void Draw()
+    {
+        // Code to draw a circle...
+        Console.WriteLine("Drawing a circle");
+        base.Draw();
+    }
+}
+class Rectangle : Shape
+{
+    public override void Draw()
+    {
+        // Code to draw a rectangle...
+        Console.WriteLine("Drawing a rectangle");
+        base.Draw();
+    }
+}
+class Triangle : Shape
+{
+    public override void Draw()
+    {
+        // Code to draw a triangle...
+        Console.WriteLine("Drawing a triangle");
+        base.Draw();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Polymorphism at work #1: a Rectangle, Triangle and Circle
+        // can all be used whereever a Shape is expected. No cast is
+        // required because an implicit conversion exists from a derived 
+        // class to its base class.
+        var shapes = new List<Shape>
+        {
+            new Rectangle(),
+            new Triangle(),
+            new Circle()
+        };
+
+        // Polymorphism at work #2: the virtual method Draw is
+        // invoked on each of the derived classes, not the base class.
+        foreach (var shape in shapes)
+        {
+            shape.Draw();
+        }
+
+        // Keep the console open in debug mode.
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+    }
+
+}
+
+/* Output:
+    Drawing a rectangle
+    Performing base class drawing tasks
+    Drawing a triangle
+    Performing base class drawing tasks
+    Drawing a circle
+    Performing base class drawing tasks
+ */
+***************************************
+public class BaseClass
+{
+    public virtual void DoWork() { }
+    public virtual int WorkProperty
+    {
+        get { return 0; }
+    }
+}
+public class DerivedClass : BaseClass
+{
+    public override void DoWork() { }
+    public override int WorkProperty
+    {
+        get { return 0; }
+    }
+}
+********************************
+DerivedClass B = new DerivedClass();
+B.DoWork();  // Calls the new method.
+
+BaseClass A = (BaseClass)B;
+A.DoWork();  // Also calls the new method.
+******************************
+public class BaseClass
+{
+    public void DoWork() { WorkField++; }
+    public int WorkField;
+    public int WorkProperty
+    {
+        get { return 0; }
+    }
+}
+
+public class DerivedClass : BaseClass
+{
+    public new void DoWork() { WorkField++; }
+    public new int WorkField;
+    public new int WorkProperty
+    {
+        get { return 0; }
+    }
+}
+**********************************virtual*******************************************
+class MyBaseClass
+{
+    // virtual auto-implemented property. Overrides can only
+    // provide specialized behavior if they implement get and set accessors.
+    public virtual string Name { get; set; }
+
+    // ordinary virtual property with backing field
+    private int num;
+    public virtual int Number
+    {
+        get { return num; }
+        set { num = value; }
+    }
+}
+
+
+class MyDerivedClass : MyBaseClass
+{
+    private string name;
+
+   // Override auto-implemented property with ordinary property
+   // to provide specialized accessor behavior.
+    public override string Name
+    {
+        get
+        {
+            return name;
+        }
+        set
+        {
+            if (value != String.Empty)
+            {
+                name = value;
+            }
+            else
+            {
+                name = "Unknown";
+            }
+        }
+    }
+
+}
+**********************
+class TestClass
+{
+    public class Shape
+    {
+        public const double PI = Math.PI;
+        protected double x, y;
+        public Shape()
+        {
+        }
+        public Shape(double x, double y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public virtual double Area()
+        {
+            return x * y;
+        }
+    }
+
+    public class Circle : Shape
+    {
+        public Circle(double r) : base(r, 0)
+        {
+        }
+
+        public override double Area()
+        {
+            return PI * x * x;
+        }
+    }
+
+    class Sphere : Shape
+    {
+        public Sphere(double r) : base(r, 0)
+        {
+        }
+
+        public override double Area()
+        {
+            return 4 * PI * x * x;
+        }
+    }
+
+    class Cylinder : Shape
+    {
+        public Cylinder(double r, double h) : base(r, h)
+        {
+        }
+
+        public override double Area()
+        {
+            return 2 * PI * x * x + 2 * PI * x * y;
+        }
+    }
+
+    static void Main()
+    {
+        double r = 3.0, h = 5.0;
+        Shape c = new Circle(r);
+        Shape s = new Sphere(r);
+        Shape l = new Cylinder(r, h);
+        // Display results:
+        Console.WriteLine("Area of Circle   = {0:F2}", c.Area());
+        Console.WriteLine("Area of Sphere   = {0:F2}", s.Area());
+        Console.WriteLine("Area of Cylinder = {0:F2}", l.Area());
+        }
+    }
+    /*
+        Output:
+        Area of Circle   = 28.27
+        Area of Sphere   = 113.10
+        Area of Cylinder = 150.80
+    */
+
