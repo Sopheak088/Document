@@ -8311,6 +8311,7 @@
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Helper\Index.cshtml" />
     <Content Include="Views\Dashboard\Dash.cshtml" />
+    <Content Include="Views\Document\Index - Copy.cshtml" />
     <None Include="Web.CustomProfile.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
