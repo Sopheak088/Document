@@ -37,30 +37,7 @@
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
-            <div class="box box-default">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Search</h3>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="box-body">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
             <div class="box">
-                <div class="box-header">
-                    <div class="col-md-12">
-                        @*<p>
-                                <a title="New" onclick="location.href='@Url.Action("Create", "Document",null)'" class="btn btn-xs btn-success pull-right">
-                                    <i class="fa fa-fw fa-plus"></i>
-                                </a>
-                            </p>*@
-                    </div>
-                </div>
                 <div class="box-body">
 
                     <table id="documents">
@@ -89,6 +66,17 @@
                     <div style="margin-left: 10px;" name="Content" id="Content" rows="10" cols="80">
                         @Html.Raw(Model.Content)
                     </div>
+                </div>
+                <div class="col-sm-12">
+                    <label for="Files" class="col-sm-12">Files</label>
+                    <ul>
+                        @foreach (var item in Model.DocumentFiles)
+                        {
+                            <li>
+                                <a>@item.Name</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </div>
